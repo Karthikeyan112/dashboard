@@ -7,6 +7,10 @@
   flex-direction: column;
   color: #555;
 
+  &__expand {
+    color: #05b3ed;
+    cursor: pointer;
+  }
   &__container {
     display: flex;
     flex-direction: column;
