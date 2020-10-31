@@ -22,9 +22,9 @@ const Result = () => {
       </div>
       <div className='result__cards'>
         <Card items={[{ type: 'Monitors', count: 134 }]} />
-        <Card items={[{ type: 'New Matches', count: 6 }, { type: 'WatchList Additions', count: 12 }]} />
-        <Card items={[{ type: 'Transfers', count: 23 }]} />
-        <Card items={[{ type: 'New Assignments', count: 2 }]} />
+        <Card items={[{ type: 'New Matches', count: 6, shouldAddClass: true }, { type: 'WatchList Additions', count: 12, shouldAddClass: true }]} />
+        <Card items={[{ type: 'Transfers', count: 23, shouldAddClass: true }]} />
+        <Card items={[{ type: 'New Assignments', count: 2, shouldAddClass: true }]} />
       </div>
       <div className='table__container'>
         <Table />

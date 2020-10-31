@@ -50,7 +50,7 @@ const TableComponent = () => {
   ];
   return (
     <Space style={{ marginTop: 16 }} className='table'>
-      <Table columns={columns} dataSource={data} />
+      <Table pagination={{ position: ['bottomCenter'] }} columns={columns} dataSource={data} />
     </Space>
   )
 }

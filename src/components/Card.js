@@ -4,9 +4,9 @@ import './Card.scss';
 const Card = ({ items }) => {
   return (
     <div className='card'>
-      {items.map(({ type, count }) => (
+      {items.map(({ type, count, shouldAddClass }) => (
         <div className='card__details'>
-          <h1>{count}</h1>
+          <h1 className={shouldAddClass && 'addBlue'}>{count}</h1>
           <p>{type}</p>
         </div>
       ))}

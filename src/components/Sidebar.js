@@ -40,10 +40,10 @@ const Sidebar = () => {
         // onAfterChange={onAfterChange}
         />
       </div>
-      <CheckboxList title='COUNTRY OF ORIGIN' plainOptions={plainOptions} />
-      <CheckboxList title='RISK LEVEL' plainOptions={['All', 'High', 'Medium', 'Low']} />
-      <CheckboxList title='WATCH LIST' plainOptions={['All', 'Sanctions', 'Fitness & probity', 'Warnings']} />
-      <CheckboxList title='PEP CLASS' plainOptions={['All', 'Class 1', 'Class 2', 'Class 3']} />
+      <CheckboxList title='COUNTRY OF ORIGIN' plainOptions={plainOptions} defaultValue={['All']} />
+      <CheckboxList title='RISK LEVEL' plainOptions={['All', 'High', 'Medium', 'Low']} defaultValue={['All']} />
+      <CheckboxList title='WATCH LIST' plainOptions={['All', 'Sanctions', 'Fitness & probity', 'Warnings']} defaultValue={['All']} />
+      <CheckboxList title='PEP CLASS' plainOptions={['All', 'Class 1', 'Class 2', 'Class 3']} defaultValue={['All']} />
 
       <div className='sidebar__container'>
         <Button>Clear Filters<span className='sidebar__delete'>&#10005;</span> </Button>

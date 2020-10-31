@@ -28,4 +28,8 @@
       // border: 0;
     }
   }
+  .ant-checkbox-group {
+    display: flex;
+    flex-direction: column;
+  }
 }

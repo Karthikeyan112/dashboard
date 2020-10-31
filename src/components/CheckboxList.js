@@ -1,19 +1,12 @@
 import React from 'react';
 import { Checkbox, Row, Col } from 'antd';
 
-const CheckboxList = ({ title, plainOptions }) => {
+const CheckboxList = ({ defaultValue, title, plainOptions }) => {
+  console.log(defaultValue);
   return (
     <div className='sidebar__container'>
       <p>{title}</p>
-      <Checkbox.Group >
-        <Row>
-          {plainOptions.map(plainOption => (
-            <Col key={plainOption} span={24}>
-              <Checkbox value={plainOption}>{plainOption}</Checkbox>
-            </Col>
-          ))}
-        </Row>
-      </Checkbox.Group>
+      <Checkbox.Group style={{ width: '100%' }} options={plainOptions} value={defaultValue} />
     </div>
   )
 }
