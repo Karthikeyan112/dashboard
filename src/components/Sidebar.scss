@@ -20,7 +20,7 @@
   &__delete {
     margin-left: 10px;
   }
-  .ant-btn {
+  .ant-btn, .ant-btn:focus {
     background-color: #ccc;
     color: #555;
     outline-width: 0;

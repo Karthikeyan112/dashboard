@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sidebar.scss';
 import { Button, DatePicker, Slider } from 'antd';
 import CheckboxList from './CheckboxList';
@@ -6,6 +6,11 @@ import CheckboxList from './CheckboxList';
 const { RangePicker } = DatePicker;
 
 const Sidebar = () => {
+  const defaultValue = ['All'];
+  const [country, setCountry] = useState(defaultValue)
+  const [risk, setRisk] = useState(defaultValue)
+  const [watchList, setWatchList] = useState(defaultValue)
+  const [pepClass, setPepClass] = useState(defaultValue)
   const marks = {
     0: '0',
     20: '20',
@@ -17,7 +22,13 @@ const Sidebar = () => {
   function formatter(value) {
     return `${value}%`;
   }
-  const plainOptions = ['All', 'US', 'UK', 'Mexico'];
+
+  const clearAll = () => {
+    setCountry([]);
+    setRisk([]);
+    setWatchList([]);
+    setPepClass([]);
+  };
 
   return (
     <div className='sidebar'>
@@ -40,13 +51,29 @@ const Sidebar = () => {
         // onAfterChange={onAfterChange}
         />
       </div>
-      <CheckboxList title='COUNTRY OF ORIGIN' plainOptions={plainOptions} defaultValue={['All']} />
-      <CheckboxList title='RISK LEVEL' plainOptions={['All', 'High', 'Medium', 'Low']} defaultValue={['All']} />
-      <CheckboxList title='WATCH LIST' plainOptions={['All', 'Sanctions', 'Fitness & probity', 'Warnings']} defaultValue={['All']} />
-      <CheckboxList title='PEP CLASS' plainOptions={['All', 'Class 1', 'Class 2', 'Class 3']} defaultValue={['All']} />
+      <CheckboxList
+        title='COUNTRY OF ORIGIN'
+        plainOptions={['All', 'US', 'UK', 'Mexico']}
+        defaultValue={country}
+        onChange={setCountry} />
+      <CheckboxList
+        title='RISK LEVEL'
+        plainOptions={['All', 'High', 'Medium', 'Low']}
+        defaultValue={risk}
+        onChange={setRisk} />
+      <CheckboxList
+        title='WATCH LIST'
+        plainOptions={['All', 'Sanctions', 'Fitness & probity', 'Warnings']}
+        defaultValue={watchList}
+        onChange={setWatchList} />
+      <CheckboxList
+        title='PEP CLASS'
+        plainOptions={['All', 'Class 1', 'Class 2', 'Class 3']}
+        defaultValue={pepClass}
+        onChange={setPepClass} />
 
       <div className='sidebar__container'>
-        <Button>Clear Filters<span className='sidebar__delete'>&#10005;</span> </Button>
+        <Button onClick={clearAll}>Clear Filters<span className='sidebar__delete'>&#10005;</span> </Button>
       </div>
     </div>
   )
