@@ -11,6 +11,7 @@ const Sidebar = () => {
   const [risk, setRisk] = useState(defaultValue)
   const [watchList, setWatchList] = useState(defaultValue)
   const [pepClass, setPepClass] = useState(defaultValue)
+  const [matching, setMatching] = useState(70)
   const marks = {
     0: '0',
     20: '20',
@@ -28,6 +29,7 @@ const Sidebar = () => {
     setRisk([]);
     setWatchList([]);
     setPepClass([]);
+    setMatching(0)
   };
 
   return (
@@ -41,14 +43,10 @@ const Sidebar = () => {
         <p>MATCHING %</p>
         <Slider
           marks={marks}
-          min={0}
-          max={100}
-          defaultValue={70}
           step={10}
           tipFormatter={formatter}
-        // value={[minPayRate, maxPayRate]}
-        // onChange={handlePayRateChange}
-        // onAfterChange={onAfterChange}
+          value={matching}
+          onChange={(e) => setMatching(e)}
         />
       </div>
       <CheckboxList

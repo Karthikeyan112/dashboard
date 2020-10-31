@@ -4,7 +4,7 @@ import { Checkbox } from 'antd';
 const CheckboxList = ({ defaultValue, title, plainOptions, onChange }) => {
   const [showAll, setShowAll] = useState(false);
   const [options, setOptions] = useState([]);
-  console.log(defaultValue)
+
   useEffect(() => {
     showAll ? setOptions(plainOptions) : setOptions(plainOptions.slice(0, 2))
   }, [showAll]);
