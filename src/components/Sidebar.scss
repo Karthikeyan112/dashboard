@@ -1,0 +1,31 @@
+.sidebar {
+  flex: .2;
+  height: 100vh;
+  padding: 10px 20px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  color: #555;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    color: #555;
+  }
+  &__delete {
+    margin-left: 10px;
+  }
+  .ant-btn {
+    background-color: #ccc;
+    color: #555;
+    outline-width: 0;
+    border: 0;
+
+    &:hover {
+      background-color: #555;
+      color: #ccc;
+      // border: 0;
+    }
+  }
+}

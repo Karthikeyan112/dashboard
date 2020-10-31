@@ -1,0 +1,61 @@
+.result {
+  flex: .8;
+  padding: 15px;
+  h3 {
+    color: #555;
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__export {
+    border: 2px solid  #015e7d;
+    margin-right: 8px;
+    border-radius: 3px;
+
+    .ant-btn, .ant-btn:focus {
+      border: none;
+      border-radius: 0;
+      color:  #015e7d;
+      font-weight: 600;
+
+      &:hover {
+        background-color: #015e7d;
+        color: #fff;
+      }
+    }
+
+    .export__caret, .export__caret:focus  {
+      background-color:  #015e7d;
+      color: #fff;
+      border-left: 2px solid #015e7d;
+
+      &:hover {
+        background-color:  #fff;
+        color:  #015e7d;
+      }
+    }
+  }
+
+  .primary__btn {
+    .ant-btn {
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+
+  &__btns {
+    margin-left: auto;
+    display: flex;
+  }
+
+  &__cards {
+    display: flex;
+    flex: .5;
+    align-items: center;
+    margin-top: 30px;
+  }
+}

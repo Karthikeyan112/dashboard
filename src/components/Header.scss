@@ -1,0 +1,38 @@
+.header {
+  background-color: #3b97a1;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+  .ant-avatar {
+    margin-right: 5px;
+  }
+
+  &__left {
+    display: flex;
+    flex: .6;
+    justify-content: flex-end;
+    align-items: center;
+    a {
+      margin-right: 20px;
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-left: auto;
+    justify-content: space-evenly;
+    padding-right: 10px;
+  }
+  &__name {
+    span {
+      padding-right: 10px;
+      font-weight: 600;
+    }
+  }
+}
