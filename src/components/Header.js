@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from "react-dom";
 import './Header.scss';
 import { Avatar } from 'antd';
 import { UserOutlined, CaretDownFilled } from '@ant-design/icons';

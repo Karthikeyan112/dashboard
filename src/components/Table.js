@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment'
 import { Table, Space, Switch } from 'antd';
-import {filterOptions} from '../utils';
+import { filterOptions } from '../utils';
 
 const TableComponent = ({ data, changeStatus }) => {
   const columns = [
@@ -76,7 +76,7 @@ const TableComponent = ({ data, changeStatus }) => {
   ];
   return (
     <Space style={{ marginTop: 16 }} className='table'>
-      <Table pagination={{ position: ['bottomCenter'] }} columns={columns} dataSource={data} />
+      <Table pagination={{ position: ['bottomCenter'] }} columns={columns} dataSource={data} bordered />
     </Space>
   )
 }

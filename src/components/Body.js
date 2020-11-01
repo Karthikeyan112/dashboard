@@ -3,6 +3,7 @@ import Sidebar from './Sidebar';
 import Result from './Result';
 import Table from './Table';
 import './Body.scss';
+import { SettingFilled } from '@ant-design/icons';
 
 import { filterData, filterByDate, filterByPepClass, filterByMatching } from '../utils';
 
@@ -52,6 +53,9 @@ const Body = () => {
       />
       <div className='body__content'>
         <Result />
+        <div className='body__setting'>
+          <SettingFilled />
+        </div>
         <Table data={filteredData} changeStatus={changeStatus} />
       </div>
     </div>

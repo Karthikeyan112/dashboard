@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 import './Sidebar.scss';
 import { Button, DatePicker, Slider } from 'antd';
 import CheckboxList from './CheckboxList';

@@ -3,4 +3,16 @@
   &__content {
     flex: 0.8;
   }
+
+  &__setting {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 20px;
+    font-size: larger;
+
+    .anticon {
+      cursor: pointer;
+    }
+  }
+
 }
