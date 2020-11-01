@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import moment from 'moment'
 import { Table, Space, Switch } from 'antd';
 
 const TableComponent = () => {
@@ -15,7 +16,25 @@ const TableComponent = () => {
     return Array.from(new Set(arr.reduce((acc, item) => [...acc, item[prop]], []))).map(item => ({ text: item, value: item }));
   }
 
+  const changeStatus = (record) => {
+    let newData = [...data];
+    setData(newData.reduce((acc, item) => {
+      console.log(item.key, record.key);
+      if (record.key === item.key) {
+        return [...acc, { ...item, status: !record.status }]
+      }
+      return [...acc, item]
+    }, []));
+  }
+
   const columns = [
+    {
+      title: 'Created',
+      dataIndex: 'created',
+      key: 'created',
+      ellipsis: true,
+      render: (created) => moment(created).format("DD MMM YYYY")
+    },
     {
       title: 'Type',
       dataIndex: 'type',
@@ -75,7 +94,7 @@ const TableComponent = () => {
       dataIndex: 'status',
       key: 'status',
       ellipsis: true,
-      render: (status) => <Switch checked={status} />
+      render: (status, record) => <Switch checked={status} onChange={() => changeStatus(record)} />
     },
   ];
   return (

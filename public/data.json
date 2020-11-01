@@ -1,7 +1,7 @@
 {
   "data": [
     {
-      "created": "",
+      "created": "01/02/20",
       "type": "Company",
       "riskLevel": "Low",
       "pepClass": "1,2,3,4",
@@ -13,7 +13,7 @@
       "country": "US"
     },
     {
-      "created": "",
+      "created": "02/02/20",
       "type": "Person",
       "riskLevel": "Medium",
       "pepClass": "1,2",
@@ -25,7 +25,7 @@
       "country": "UK"
     },
     {
-      "created": "",
+      "created": "05/02/20",
       "type": "Text",
       "riskLevel": "High",
       "pepClass": "1,3",
@@ -37,7 +37,7 @@
       "country": "Mexico"
     },
     {
-      "created": "",
+      "created": "01/23/19",
       "type": "Company",
       "riskLevel": "Medium",
       "pepClass": "3,4",
@@ -49,7 +49,7 @@
       "country": "UK"
     },
     {
-      "created": "",
+      "created": "01/25/17",
       "type": "Company",
       "riskLevel": "High",
       "pepClass": "3,4",
@@ -61,7 +61,7 @@
       "country": "UK"
     },
     {
-      "created": "",
+      "created": "12/23/20",
       "type": "Person",
       "riskLevel": "Low",
       "pepClass": "2",
@@ -73,7 +73,7 @@
       "country": "UK"
     },
     {
-      "created": "",
+      "created": "08/02/18",
       "type": "Company",
       "riskLevel": "Low",
       "pepClass": "2",
@@ -85,7 +85,7 @@
       "country": "UK"
     },
     {
-      "created": "",
+      "created": "02/11/19",
       "type": "Company",
       "riskLevel": "Low",
       "pepClass": "2",
@@ -97,7 +97,7 @@
       "country": "UK"
     },
     {
-      "created": "",
+      "created": "11/02/18",
       "type": "Person",
       "riskLevel": "Low",
       "pepClass": "2,3",
@@ -109,7 +109,7 @@
       "country": "Mexico"
     },
     {
-      "created": "",
+      "created": "09/02/21",
       "type": "Text",
       "riskLevel": "Low",
       "pepClass": "2,3,4",
@@ -121,7 +121,7 @@
       "country": "US"
     },
     {
-      "created": "",
+      "created": "07/06/20",
       "type": "Company",
       "riskLevel": "Low",
       "pepClass": "1,2,3,4",
@@ -133,7 +133,7 @@
       "country": "US"
     },
     {
-      "created": "",
+      "created": "19/09/19",
       "type": "Person",
       "riskLevel": "Medium",
       "pepClass": "1,2",
@@ -145,7 +145,7 @@
       "country": "UK"
     },
     {
-      "created": "",
+      "created": "08/29/16",
       "type": "Text",
       "riskLevel": "High",
       "pepClass": "1,3",
@@ -157,7 +157,7 @@
       "country": "Mexico"
     },
     {
-      "created": "",
+      "created": "12/12/20",
       "type": "Company",
       "riskLevel": "High",
       "pepClass": "3,4",
@@ -169,7 +169,7 @@
       "country": "UK"
     },
     {
-      "created": "",
+      "created": "09/09/19",
       "type": "Company",
       "riskLevel": "Low",
       "pepClass": "3,4",
@@ -181,7 +181,7 @@
       "country": "Mexico"
     },
     {
-      "created": "",
+      "created": "05/17/20",
       "type": "Company",
       "riskLevel": "Low",
       "pepClass": "2",
@@ -193,7 +193,7 @@
       "country": "UK"
     },
     {
-      "created": "",
+      "created": "06/13/20",
       "type": "Person",
       "riskLevel": "Low",
       "pepClass": "2",
@@ -205,7 +205,7 @@
       "country": "UK"
     },
     {
-      "created": "",
+      "created": "04/28/20",
       "type": "Text",
       "riskLevel": "Low",
       "pepClass": "2",
@@ -217,7 +217,7 @@
       "country": "Mexico"
     },
     {
-      "created": "",
+      "created": "06/27/20",
       "type": "Text",
       "riskLevel": "Low",
       "pepClass": "2,3",
@@ -229,7 +229,7 @@
       "country": "UK"
     },
     {
-      "created": "",
+      "created": "11/09/20",
       "type": "Text",
       "riskLevel": "Low",
       "pepClass": "2,3,4",
