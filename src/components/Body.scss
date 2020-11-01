@@ -1,3 +1,6 @@
 .body {
   display: flex;
+  &__content {
+    flex: 0.8;
+  }
 }

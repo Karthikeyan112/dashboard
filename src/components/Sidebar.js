@@ -5,13 +5,9 @@ import CheckboxList from './CheckboxList';
 
 const { RangePicker } = DatePicker;
 
-const Sidebar = () => {
-  const defaultValue = ['All'];
-  const [country, setCountry] = useState(defaultValue)
-  const [risk, setRisk] = useState(defaultValue)
-  const [watchList, setWatchList] = useState(defaultValue)
-  const [pepClass, setPepClass] = useState(defaultValue)
-  const [matching, setMatching] = useState(70)
+const Sidebar = ({ fields, setters }) => {
+  const { country, risk, watchList, pepClass, matching } = fields;
+  const { setCountry, setRisk, setWatchList, setPepClass, setMatching } = setters;
   const marks = {
     0: '0',
     20: '20',
@@ -53,22 +49,22 @@ const Sidebar = () => {
         title='COUNTRY OF ORIGIN'
         plainOptions={['All', 'US', 'UK', 'Mexico']}
         defaultValue={country}
-        onChange={setCountry} />
+        onChange={(e) => setCountry(e)} />
       <CheckboxList
         title='RISK LEVEL'
         plainOptions={['All', 'High', 'Medium', 'Low']}
         defaultValue={risk}
-        onChange={setRisk} />
+        onChange={(e) => setRisk(e)} />
       <CheckboxList
         title='WATCH LIST'
         plainOptions={['All', 'Sanctions', 'Fitness & probity', 'Warnings']}
         defaultValue={watchList}
-        onChange={setWatchList} />
+        onChange={(e) => setWatchList(e)} />
       <CheckboxList
         title='PEP CLASS'
         plainOptions={['All', 'Class 1', 'Class 2', 'Class 3']}
         defaultValue={pepClass}
-        onChange={setPepClass} />
+        onChange={(e) => setPepClass(e)} />
 
       <div className='sidebar__container'>
         <Button onClick={clearAll}>Clear Filters<span className='sidebar__delete'>&#10005;</span> </Button>

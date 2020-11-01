@@ -1,32 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import moment from 'moment'
 import { Table, Space, Switch } from 'antd';
+import {filterOptions} from '../utils';
 
-const TableComponent = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/data.json`).then(res => res.json())
-      .then(res => {
-        setData(res.data);
-      })
-      .catch(err => console.log(err))
-  }, []);
-
-  const filterOptions = (arr, prop) => {
-    return Array.from(new Set(arr.reduce((acc, item) => [...acc, item[prop]], []))).map(item => ({ text: item, value: item }));
-  }
-
-  const changeStatus = (record) => {
-    let newData = [...data];
-    setData(newData.reduce((acc, item) => {
-      console.log(item.key, record.key);
-      if (record.key === item.key) {
-        return [...acc, { ...item, status: !record.status }]
-      }
-      return [...acc, item]
-    }, []));
-  }
-
+const TableComponent = ({ data, changeStatus }) => {
   const columns = [
     {
       title: 'Created',
