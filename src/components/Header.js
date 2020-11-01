@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <header className='header'>
       <ul className='header__left' onClick={handleClick}>
-        <li>Monitor Center</li>
+        <li className='active'>Monitor Center</li>
         <li>Assesment Center</li>
         <li>Admin</li>
       </ul>
