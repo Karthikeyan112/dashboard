@@ -13,6 +13,7 @@ const Body = () => {
   const [watchList, setWatchList] = useState(defaultValue);
   const [pepClass, setPepClass] = useState(defaultValue);
   const [matching, setMatching] = useState(70);
+  const [dateRange, setDateRange] = useState(null)
 
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -26,49 +27,12 @@ const Body = () => {
       .catch(err => console.log(err))
   }, []);
 
-  const onDateChange = (date) => {
-    console.log(date);
+  useEffect(() => {
     const filteredByCountry = filterData(data, country, 'country');
     const filteredByRiskLevel = filterData(filteredByCountry, risk, 'riskLevel');
     const filteredByPepClass = filterByPepClass(filteredByRiskLevel, pepClass, 'pepClass');
-    setFilteredData(filterByDate(filterByMatching(filteredByPepClass, matching), date));
-  }
-
-  const onCountryChange = (e) => {
-    setCountry(e);
-    const filteredByCountry = filterData(data, e, 'country');
-    const filteredByRiskLevel = filterData(filteredByCountry, risk, 'riskLevel');
-    const filteredByPepClass = filterByPepClass(filteredByRiskLevel, pepClass, 'pepClass');
-    setFilteredData(filterByDate(filterByMatching(filteredByPepClass, matching), null));
-  };
-
-  const onRiskChange = (e) => {
-    setRisk(e);
-    const filteredByCountry = filterData(data, country, 'country');
-    const filteredByRiskLevel = filterData(filteredByCountry, e, 'riskLevel');
-    const filteredByPepClass = filterByPepClass(filteredByRiskLevel, pepClass, 'pepClass');
-    setFilteredData(filterByDate(filterByMatching(filteredByPepClass, matching), null));
-  };
-
-  const onWatchListChange = (e) => {
-    setWatchList(e);
-  };
-
-  const onPepClassChange = (e) => {
-    setPepClass(e);
-    const filteredByCountry = filterData(data, country, 'country');
-    const filteredByRiskLevel = filterData(filteredByCountry, risk, 'riskLevel');
-    const filteredByPepClass = filterByPepClass(filteredByRiskLevel, e, 'pepClass');
-    setFilteredData(filterByDate(filterByMatching(filteredByPepClass, matching), null));
-  };
-
-  const onMatchingChange = (e) => {
-    setMatching(e);
-    const filteredByCountry = filterData(data, country, 'country');
-    const filteredByRiskLevel = filterData(filteredByCountry, risk, 'riskLevel');
-    const filteredByPepClass = filterByPepClass(filteredByRiskLevel, pepClass, 'pepClass');
-    setFilteredData(filterByDate(filterByMatching(filteredByPepClass, e), null));
-  };
+    setFilteredData(filterByDate(filterByMatching(filteredByPepClass, matching), dateRange));
+  }, [country, dateRange, risk, pepClass, matching]);
 
   const changeStatus = (record) => {
     let newData = [...filteredData];
@@ -83,8 +47,8 @@ const Body = () => {
   return (
     <div className='body'>
       <Sidebar
-        fields={{ country, risk, watchList, pepClass, matching }}
-        setters={{ onCountryChange, onRiskChange, onWatchListChange, onPepClassChange, onMatchingChange, onDateChange }}
+        fields={{ country, risk, watchList, pepClass, matching, dateRange }}
+        setters={{ setCountry, setRisk, setWatchList, setPepClass, setMatching, setDateRange }}
       />
       <div className='body__content'>
         <Result />

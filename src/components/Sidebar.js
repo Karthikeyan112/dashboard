@@ -7,8 +7,8 @@ import CheckboxList from './CheckboxList';
 const { RangePicker } = DatePicker;
 
 const Sidebar = ({ fields, setters }) => {
-  const { country, risk, watchList, pepClass, matching } = fields;
-  const { onCountryChange, onRiskChange, onWatchListChange, onPepClassChange, onMatchingChange, onDateChange } = setters;
+  const { country, risk, watchList, pepClass, matching, dateRange } = fields;
+  const { setCountry, setRisk, setWatchList, setPepClass, setMatching, setDateRange } = setters;
   const marks = {
     0: '0',
     20: '20',
@@ -28,11 +28,12 @@ const Sidebar = ({ fields, setters }) => {
   }
 
   const clearAll = () => {
-    onCountryChange([]);
-    onRiskChange([]);
-    onWatchListChange([]);
-    onPepClassChange([]);
-    onMatchingChange(0)
+    setCountry([]);
+    setRisk([]);
+    setWatchList([]);
+    setPepClass([]);
+    setMatching(0);
+    setDateRange(null);
   };
 
   return (
@@ -40,7 +41,7 @@ const Sidebar = ({ fields, setters }) => {
       <h3>Filters</h3>
       <div className='sidebar__container'>
         <p>DATE RANGE</p>
-        <RangePicker format='DD/MM/YY' onChange={onDateChange} />
+        {dateRange ? <RangePicker format='DD/MM/YY' value={dateRange} onChange={setDateRange} /> : <RangePicker format='DD/MM/YY' onChange={setDateRange} />}
       </div>
       <div className='sidebar__container'>
         <p>MATCHING %</p>
@@ -49,29 +50,29 @@ const Sidebar = ({ fields, setters }) => {
           step={10}
           tipFormatter={formatter}
           value={matching}
-          onChange={(e) => onMatchingChange(e)}
+          onChange={(e) => setMatching(e)}
         />
       </div>
       <CheckboxList
         title='COUNTRY OF ORIGIN'
         plainOptions={['All', 'US', 'UK', 'Mexico']}
         defaultValue={country}
-        onChange={(e) => onCountryChange(e)} />
+        onChange={(e) => setCountry(e)} />
       <CheckboxList
         title='RISK LEVEL'
         plainOptions={['All', 'High', 'Medium', 'Low']}
         defaultValue={risk}
-        onChange={(e) => onRiskChange(e)} />
+        onChange={(e) => setRisk(e)} />
       <CheckboxList
         title='WATCH LIST'
         plainOptions={['All', 'Sanctions', 'Fitness & probity', 'Warnings']}
         defaultValue={watchList}
-        onChange={(e) => onWatchListChange(e)} />
+        onChange={(e) => setWatchList(e)} />
       <CheckboxList
         title='PEP CLASS'
         plainOptions={pepClassOptions}
         defaultValue={pepClass}
-        onChange={(e) => onPepClassChange(e)} />
+        onChange={(e) => setPepClass(e)} />
 
       <div className='sidebar__container'>
         <Button onClick={clearAll}>Clear Filters<span className='sidebar__delete'>&#10005;</span> </Button>
