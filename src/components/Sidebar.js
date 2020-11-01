@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import moment from 'moment';
 import './Sidebar.scss';
 import { Button, DatePicker, Slider } from 'antd';
 import CheckboxList from './CheckboxList';
@@ -7,7 +8,7 @@ const { RangePicker } = DatePicker;
 
 const Sidebar = ({ fields, setters }) => {
   const { country, risk, watchList, pepClass, matching } = fields;
-  const { onCountryChange, onRiskChange, onWatchListChange, onPepClassChange, onMatchingChange } = setters;
+  const { onCountryChange, onRiskChange, onWatchListChange, onPepClassChange, onMatchingChange, onDateChange } = setters;
   const marks = {
     0: '0',
     20: '20',
@@ -39,7 +40,7 @@ const Sidebar = ({ fields, setters }) => {
       <h3>Filters</h3>
       <div className='sidebar__container'>
         <p>DATE RANGE</p>
-        <RangePicker format='DD/MM/YY' />
+        <RangePicker format='DD/MM/YY' onChange={onDateChange} />
       </div>
       <div className='sidebar__container'>
         <p>MATCHING %</p>
