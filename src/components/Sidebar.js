@@ -7,7 +7,7 @@ const { RangePicker } = DatePicker;
 
 const Sidebar = ({ fields, setters }) => {
   const { country, risk, watchList, pepClass, matching } = fields;
-  const { setCountry, setRisk, setWatchList, setPepClass, setMatching } = setters;
+  const { onCountryChange, onRiskChange, onWatchListChange, onPepClassChange, onMatchingChange } = setters;
   const marks = {
     0: '0',
     20: '20',
@@ -16,16 +16,22 @@ const Sidebar = ({ fields, setters }) => {
     80: '80',
     100: '100'
   };
+  const pepClassOptions = [
+    { label: 'All', value: 'All' },
+    { label: 'Class 1', value: '1' },
+    { label: 'Class 2', value: '2' },
+    { label: 'Class 3', value: '3' },
+  ]
   function formatter(value) {
     return `${value}%`;
   }
 
   const clearAll = () => {
-    setCountry([]);
-    setRisk([]);
-    setWatchList([]);
-    setPepClass([]);
-    setMatching(0)
+    onCountryChange([]);
+    onRiskChange([]);
+    onWatchListChange([]);
+    onPepClassChange([]);
+    onMatchingChange(0)
   };
 
   return (
@@ -42,29 +48,29 @@ const Sidebar = ({ fields, setters }) => {
           step={10}
           tipFormatter={formatter}
           value={matching}
-          onChange={(e) => setMatching(e)}
+          onChange={(e) => onMatchingChange(e)}
         />
       </div>
       <CheckboxList
         title='COUNTRY OF ORIGIN'
         plainOptions={['All', 'US', 'UK', 'Mexico']}
         defaultValue={country}
-        onChange={(e) => setCountry(e)} />
+        onChange={(e) => onCountryChange(e)} />
       <CheckboxList
         title='RISK LEVEL'
         plainOptions={['All', 'High', 'Medium', 'Low']}
         defaultValue={risk}
-        onChange={(e) => setRisk(e)} />
+        onChange={(e) => onRiskChange(e)} />
       <CheckboxList
         title='WATCH LIST'
         plainOptions={['All', 'Sanctions', 'Fitness & probity', 'Warnings']}
         defaultValue={watchList}
-        onChange={(e) => setWatchList(e)} />
+        onChange={(e) => onWatchListChange(e)} />
       <CheckboxList
         title='PEP CLASS'
-        plainOptions={['All', 'Class 1', 'Class 2', 'Class 3']}
+        plainOptions={pepClassOptions}
         defaultValue={pepClass}
-        onChange={(e) => setPepClass(e)} />
+        onChange={(e) => onPepClassChange(e)} />
 
       <div className='sidebar__container'>
         <Button onClick={clearAll}>Clear Filters<span className='sidebar__delete'>&#10005;</span> </Button>
