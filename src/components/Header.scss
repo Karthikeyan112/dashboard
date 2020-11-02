@@ -12,11 +12,17 @@
     display: flex;
     flex: .6;
     justify-content: flex-end;
+    list-style: none;
     align-items: center;
-    a {
+    li {
       margin-right: 20px;
       color: #fff;
       font-weight: 600;
+      cursor: pointer;
+
+      &.active {
+        border-bottom: 2px solid #fff;
+      }
     }
   }
 

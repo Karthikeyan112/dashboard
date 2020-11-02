@@ -1,7 +1,6 @@
 import React from 'react';
 import './Result.scss';
 import Card from './Card';
-import Table from './Table';
 import { Button } from 'antd';
 import { CaretDownOutlined, VerticalAlignBottomOutlined } from '@ant-design/icons';
 
@@ -25,9 +24,6 @@ const Result = () => {
         <Card items={[{ type: 'New Matches', count: 6, shouldAddClass: true }, { type: 'WatchList Additions', count: 12, shouldAddClass: true }]} />
         <Card items={[{ type: 'Transfers', count: 23, shouldAddClass: true }]} />
         <Card items={[{ type: 'New Assignments', count: 2, shouldAddClass: true }]} />
-      </div>
-      <div className='table__container'>
-        <Table />
       </div>
     </div>
   )

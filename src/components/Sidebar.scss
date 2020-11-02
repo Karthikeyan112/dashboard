@@ -7,6 +7,10 @@
   flex-direction: column;
   color: #555;
 
+  &__expand {
+    color: #05b3ed;
+    cursor: pointer;
+  }
   &__container {
     display: flex;
     flex-direction: column;
@@ -16,7 +20,7 @@
   &__delete {
     margin-left: 10px;
   }
-  .ant-btn {
+  .ant-btn, .ant-btn:focus {
     background-color: #ccc;
     color: #555;
     outline-width: 0;
